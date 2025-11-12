@@ -1,0 +1,20 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title ? `${title} |` : ""} My Astro Blog</title>
+  </head>
+  <body style="margin:0; font-family: system-ui, sans-serif;">
+    <SiteHeader />
+    <main style="max-width:800px; margin:2rem auto; padding:0 1rem;">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
